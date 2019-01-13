@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reactive web socket example</title>
+</head>
+<body onload="start()">
+
+    <script>
+        function start() {
+            var ws = new WebSocket("ws:127.0.0.1:8080/ws/ping");
+            ws.onmessage = function (ev) {
+                console.log("message: "+  ev.data.toString());
+            }
+        }
+    </script>
+
+</body>
+</html>
